@@ -1,0 +1,1254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta
+    name="description"
+    content="Aimdriod provides specialist statistical programming, combining extensive industry experience with high-quality deliverables, clear communication and dependable delivery."
+  />
+
+  <meta name="theme-color" content="#090909" />
+
+  <title>Aimdriod | Programming. Data. Delivery.</title>
+
+  <link rel="icon" href="aimdriod-logo-transparent.png" />
+
+  <style>
+    :root {
+      --bg: #080808;
+      --bg-soft: #101010;
+      --panel: rgba(255, 255, 255, 0.055);
+      --panel-strong: rgba(255, 255, 255, 0.085);
+      --text: #f5f5f3;
+      --muted: #aaa9a4;
+      --line: rgba(255, 255, 255, 0.12);
+      --green: #8be52a;
+      --yellow: #ffd91a;
+      --max: 1160px;
+      --radius: 24px;
+      --shadow: 0 24px 80px rgba(0, 0, 0, 0.38);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background: var(--bg);
+    }
+
+    body {
+      margin: 0;
+      color: var(--text);
+
+      background:
+        radial-gradient(
+          circle at 18% 8%,
+          rgba(139, 229, 42, 0.08),
+          transparent 24rem
+        ),
+        radial-gradient(
+          circle at 86% 26%,
+          rgba(255, 217, 26, 0.065),
+          transparent 25rem
+        ),
+        linear-gradient(
+          180deg,
+          #0a0a0a 0%,
+          #070707 100%
+        );
+
+      font-family:
+        Inter,
+        ui-sans-serif,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Helvetica,
+        Arial,
+        sans-serif;
+
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .wrap {
+      width: min(calc(100% - 40px), var(--max));
+      margin: 0 auto;
+    }
+
+    /* =========================
+       NAVIGATION
+    ========================== */
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(8, 8, 8, 0.78);
+      backdrop-filter: blur(18px);
+    }
+
+    .nav-inner {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      font-weight: 800;
+      letter-spacing: -0.025em;
+      font-size: 1.2rem;
+      text-decoration: none;
+    }
+
+    .brand .green {
+      color: var(--green);
+    }
+
+    .brand .yellow {
+      color: var(--yellow);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      font-size: 0.94rem;
+      color: #d8d8d4;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: white;
+    }
+
+    .nav-cta {
+      padding: 10px 17px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    /* =========================
+       HERO
+    ========================== */
+
+    .hero {
+      min-height: 760px;
+      display: grid;
+      align-items: center;
+      padding: 74px 0 72px;
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.18fr 0.82fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 22px;
+      color: #d6d6d1;
+      font-size: 0.84rem;
+      font-weight: 700;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 42px;
+      height: 3px;
+      border-radius: 10px;
+      background: linear-gradient(
+        90deg,
+        var(--green),
+        var(--yellow)
+      );
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 760px;
+      font-size: clamp(3rem, 5.7vw, 5.5rem);
+      line-height: 0.98;
+      letter-spacing: -0.055em;
+      font-weight: 850;
+    }
+
+    .gradient-text {
+      background: linear-gradient(
+        90deg,
+        var(--green),
+        var(--yellow)
+      );
+
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-copy {
+      max-width: 650px;
+      margin: 28px 0 0;
+      color: #c3c3be;
+      font-size: clamp(1.05rem, 1.7vw, 1.25rem);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 52px;
+      padding: 0 22px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 760;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+
+      transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        background 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      color: #090909;
+      border-color: transparent;
+
+      background: linear-gradient(
+        100deg,
+        var(--green),
+        var(--yellow)
+      );
+
+      box-shadow:
+        0 10px 35px rgba(139, 229, 42, 0.12);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    /* =========================
+       HERO LOGO
+    ========================== */
+
+    .logo-stage {
+      position: relative;
+      min-height: 480px;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding-top: 0;
+    }
+
+    .logo-stage::before {
+      content: "";
+      position: absolute;
+      width: 84%;
+      aspect-ratio: 1;
+      top: 20px;
+      border-radius: 50%;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(255, 255, 255, 0.08),
+          rgba(255, 255, 255, 0) 66%
+        );
+
+      filter: blur(2px);
+    }
+
+    .hero-logo {
+      position: relative;
+      z-index: 2;
+      display: block;
+      width: min(100%, 560px);
+      height: auto;
+      transform: translateY(-28px);
+
+      filter:
+        drop-shadow(
+          0 16px 36px rgba(0, 0, 0, 0.38)
+        );
+    }
+
+    /* =========================
+       SECTIONS
+    ========================== */
+
+    section {
+      padding: 100px 0;
+      border-top:
+        1px solid rgba(255, 255, 255, 0.07);
+    }
+
+    .section-heading {
+      display: grid;
+      grid-template-columns: 0.55fr 1.45fr;
+      gap: 56px;
+      margin-bottom: 48px;
+      align-items: start;
+    }
+
+    .kicker {
+      color: #b5b5af;
+      font-size: 0.83rem;
+      font-weight: 750;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(2.2rem, 4.4vw, 4rem);
+      line-height: 1.02;
+      letter-spacing: -0.045em;
+    }
+
+    .section-intro {
+      margin: 18px 0 0;
+      max-width: 720px;
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
+
+    /* =========================
+       SERVICES
+    ========================== */
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      position: relative;
+      padding: 30px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+
+      background:
+        linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.06),
+          rgba(255, 255, 255, 0.025)
+        );
+
+      box-shadow:
+        0 18px 48px rgba(0, 0, 0, 0.16);
+
+      overflow: hidden;
+    }
+
+    .card::after {
+      content: "";
+      position: absolute;
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      right: -52px;
+      top: -52px;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(139, 229, 42, 0.11),
+          transparent 70%
+        );
+    }
+
+    .card:nth-child(2)::after {
+      background:
+        radial-gradient(
+          circle,
+          rgba(255, 217, 26, 0.11),
+          transparent 70%
+        );
+    }
+
+    .card-number {
+      margin-bottom: 36px;
+      color: #777771;
+      font-size: 0.83rem;
+      font-weight: 800;
+    }
+
+    .card h3 {
+      margin: 0 0 12px;
+      font-size: 1.35rem;
+      letter-spacing: -0.02em;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    /* =========================
+       ABOUT
+    ========================== */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 58px;
+      align-items: start;
+    }
+
+    .about-copy p {
+      margin: 0 0 18px;
+      color: #c3c3bd;
+      font-size: 1.06rem;
+    }
+
+    .principles {
+      display: grid;
+      gap: 14px;
+    }
+
+    .principle {
+      padding: 22px 24px;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 18px;
+      align-items: start;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.035);
+    }
+
+    .dot {
+      width: 11px;
+      height: 11px;
+      margin-top: 7px;
+      border-radius: 50%;
+      background: var(--green);
+
+      box-shadow:
+        0 0 22px rgba(139, 229, 42, 0.32);
+    }
+
+    .principle:nth-child(even) .dot {
+      background: var(--yellow);
+
+      box-shadow:
+        0 0 22px rgba(255, 217, 26, 0.3);
+    }
+
+    .principle strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 1rem;
+    }
+
+    .principle span {
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    /* =========================
+       WHY AIMDRIOD
+    ========================== */
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .why {
+      min-height: 195px;
+      padding: 24px;
+      border-top: 1px solid var(--line);
+
+      background:
+        linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.03),
+          transparent
+        );
+    }
+
+    .why span {
+      display: block;
+      margin-bottom: 40px;
+      color: var(--green);
+      font-size: 1.65rem;
+      font-weight: 800;
+    }
+
+    .why:nth-child(even) span {
+      color: var(--yellow);
+    }
+
+    .why h3 {
+      margin: 0 0 8px;
+      font-size: 1.08rem;
+    }
+
+    .why p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    /* =========================
+       CONTACT
+    ========================== */
+
+    .contact-panel {
+      position: relative;
+
+      padding:
+        clamp(34px, 6vw, 70px);
+
+      border:
+        1px solid rgba(255, 255, 255, 0.13);
+
+      border-radius: 32px;
+
+      overflow: hidden;
+
+      background:
+        radial-gradient(
+          circle at 8% 18%,
+          rgba(139, 229, 42, 0.11),
+          transparent 21rem
+        ),
+        radial-gradient(
+          circle at 91% 80%,
+          rgba(255, 217, 26, 0.1),
+          transparent 23rem
+        ),
+        rgba(255, 255, 255, 0.045);
+
+      box-shadow:
+        var(--shadow);
+    }
+
+    .contact-panel h2 {
+      max-width: 780px;
+      margin-bottom: 20px;
+    }
+
+    .contact-panel p {
+      max-width: 700px;
+      margin: 0 0 28px;
+      color: #bebeb8;
+      font-size: 1.06rem;
+    }
+
+    /* =========================
+       FOOTER
+    ========================== */
+
+    footer {
+      padding: 36px 0 46px;
+      color: #83837d;
+      font-size: 0.88rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+
+      border-top:
+        1px solid rgba(255, 255, 255, 0.08);
+
+      padding-top: 28px;
+    }
+
+    .small-accent {
+      color: #cfcfca;
+    }
+
+    /* =========================
+       TABLET
+    ========================== */
+
+    @media (max-width: 900px) {
+
+      .nav-links a:not(.nav-cta) {
+        display: none;
+      }
+
+      .hero {
+        min-height: auto;
+        padding-top: 64px;
+      }
+
+      .hero-grid,
+      .section-heading,
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-grid {
+        gap: 38px;
+      }
+
+      .logo-stage {
+        min-height: auto;
+        padding-top: 0;
+      }
+
+      .hero-logo {
+        width: min(100%, 540px);
+        transform: translateY(0);
+      }
+
+      .services {
+        grid-template-columns: 1fr;
+      }
+
+      .why-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      section {
+        padding: 78px 0;
+      }
+    }
+
+    /* =========================
+       MOBILE
+    ========================== */
+
+    @media (max-width: 560px) {
+
+      .wrap {
+        width:
+          min(
+            calc(100% - 28px),
+            var(--max)
+          );
+      }
+
+      .nav-inner {
+        min-height: 64px;
+      }
+
+      .hero {
+        padding:
+          48px 0 60px;
+      }
+
+      .hero-logo {
+        width: 100%;
+      }
+
+      .why-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .card {
+        padding: 25px;
+      }
+
+      .contact-panel {
+        border-radius: 24px;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================
+       NAVIGATION
+  ========================== -->
+
+  <nav>
+    <div class="wrap nav-inner">
+
+      <a
+        class="brand"
+        href="#top"
+        aria-label="Aimdriod home"
+      >
+        A<span class="green">i</span>mdr<span class="yellow">i</span>od
+      </a>
+
+      <div class="nav-links">
+
+        <a href="#services">
+          Services
+        </a>
+
+        <a href="#about">
+          About
+        </a>
+
+        <a href="#why">
+          Why Aimdriod
+        </a>
+
+        <a
+          class="nav-cta"
+          href="#contact"
+        >
+          Get in touch
+        </a>
+
+      </div>
+    </div>
+  </nav>
+
+  <main id="top">
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <header class="hero">
+
+      <div class="wrap hero-grid">
+
+        <div>
+
+          <div class="eyebrow">
+            Specialist programming & data consultancy
+          </div>
+
+          <h1>
+            Specialist programming.
+            Quality-focused.
+            <span class="gradient-text">
+              Dependable delivery.
+            </span>
+          </h1>
+
+          <p class="hero-copy">
+
+            Aimdriod provides specialist statistical programming,
+            combining extensive industry experience with
+            high-quality deliverables, clear communication
+            and dependable delivery.
+
+          </p>
+
+          <div class="hero-actions">
+
+            <a
+              class="btn btn-primary"
+              href="#contact"
+            >
+              Start a conversation
+            </a>
+
+            <a
+              class="btn btn-secondary"
+              href="#services"
+            >
+              Explore our services
+            </a>
+
+          </div>
+
+        </div>
+
+        <div
+          class="logo-stage"
+          aria-label="Aimdriod logo"
+        >
+
+          <img
+            class="hero-logo"
+            src="aimdriod-logo-transparent.png"
+            alt="Aimdriod"
+          />
+
+        </div>
+
+      </div>
+
+    </header>
+
+    <!-- =========================
+         SERVICES
+    ========================== -->
+
+    <section id="services">
+
+      <div class="wrap">
+
+        <div class="section-heading">
+
+          <div class="kicker">
+            What we do
+          </div>
+
+          <div>
+
+            <h2>
+              High-quality programming support
+              you can rely on.
+            </h2>
+
+            <p class="section-intro">
+
+              We work where strong programming,
+              careful data handling and dependable
+              delivery matter most. Engagements can
+              range from study-level work to submission
+              support, and everything in between.
+
+            </p>
+
+          </div>
+
+        </div>
+
+        <div class="services">
+
+          <article class="card">
+
+            <div class="card-number">
+              01
+            </div>
+
+            <h3>
+              Clinical & Statistical Programming
+            </h3>
+
+            <p>
+
+              Experienced programming support across
+              clinical-development workflows, with an
+              emphasis on robust, traceable and
+              high-quality deliverables.
+
+            </p>
+
+          </article>
+
+          <article class="card">
+
+            <div class="card-number">
+              02
+            </div>
+
+            <h3>
+              Data & Submission Support
+            </h3>
+
+            <p>
+
+              Practical support for complex datasets,
+              analysis outputs and submission-focused
+              work where consistency, accuracy and
+              timelines are critical.
+
+            </p>
+
+          </article>
+
+          <article class="card">
+
+            <div class="card-number">
+              03
+            </div>
+
+            <h3>
+              Consultancy & Quality Review
+            </h3>
+
+            <p>
+
+              Independent technical input,
+              programming review and problem-solving
+              to help teams move projects forward
+              with greater confidence.
+
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- =========================
+         ABOUT
+    ========================== -->
+
+    <section id="about">
+
+      <div class="wrap">
+
+        <div class="section-heading">
+
+          <div class="kicker">
+            About Aimdriod
+          </div>
+
+          <div>
+
+            <h2>
+              Small by design.
+              Experienced where it counts.
+            </h2>
+
+          </div>
+
+        </div>
+
+        <div class="about-grid">
+
+          <div class="about-copy">
+
+            <p>
+
+              Aimdriod is an independent consultancy
+              built around a simple idea: highly
+              experienced people, working directly
+              with clients, can deliver excellent
+              work without layers of unnecessary
+              process.
+
+            </p>
+
+            <p>
+
+              We value clear communication, careful
+              thinking and solutions that are
+              appropriate to the real problem —
+              not complexity for complexity's sake.
+
+            </p>
+
+            <p>
+
+              Our aim is to become the kind of
+              partner clients can rely on:
+              technically capable, responsive,
+              pragmatic and committed to getting
+              the detail right.
+
+            </p>
+
+          </div>
+
+          <div class="principles">
+
+            <div class="principle">
+
+              <div class="dot"></div>
+
+              <div>
+
+                <strong>
+                  Direct collaboration
+                </strong>
+
+                <span>
+                  You work closely with the people
+                  doing the work.
+                </span>
+
+              </div>
+
+            </div>
+
+            <div class="principle">
+
+              <div class="dot"></div>
+
+              <div>
+
+                <strong>
+                  Technical depth
+                </strong>
+
+                <span>
+                  Experience applied to real-world
+                  programming and data challenges.
+                </span>
+
+              </div>
+
+            </div>
+
+            <div class="principle">
+
+              <div class="dot"></div>
+
+              <div>
+
+                <strong>
+                  Pragmatic delivery
+                </strong>
+
+                <span>
+                  Clear priorities, sensible
+                  solutions and focus on what matters.
+                </span>
+
+              </div>
+
+            </div>
+
+            <div class="principle">
+
+              <div class="dot"></div>
+
+              <div>
+
+                <strong>
+                  Quality first
+                </strong>
+
+                <span>
+                  Careful, traceable work designed
+                  to stand up to scrutiny.
+                </span>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- =========================
+         WHY AIMDRIOD
+    ========================== -->
+
+    <section id="why">
+
+      <div class="wrap">
+
+        <div class="section-heading">
+
+          <div class="kicker">
+            Why Aimdriod
+          </div>
+
+          <div>
+
+            <h2>
+              Experienced support you can
+              actually work with.
+            </h2>
+
+            <p class="section-intro">
+
+              The value of a specialist consultancy
+              is not simply technical knowledge.
+              It is knowing how to apply that
+              knowledge efficiently, communicate
+              clearly and keep delivery moving.
+
+            </p>
+
+          </div>
+
+        </div>
+
+        <div class="why-grid">
+
+          <div class="why">
+
+            <span>
+              01
+            </span>
+
+            <h3>
+              Experienced
+            </h3>
+
+            <p>
+              Senior-level thinking brought
+              directly to the work.
+            </p>
+
+          </div>
+
+          <div class="why">
+
+            <span>
+              02
+            </span>
+
+            <h3>
+              Dependable
+            </h3>
+
+            <p>
+              Clear commitments, careful execution
+              and ownership of delivery.
+            </p>
+
+          </div>
+
+          <div class="why">
+
+            <span>
+              03
+            </span>
+
+            <h3>
+              Flexible
+            </h3>
+
+            <p>
+              Support shaped around the needs
+              and scale of the project.
+            </p>
+
+          </div>
+
+          <div class="why">
+
+            <span>
+              04
+            </span>
+
+            <h3>
+              Practical
+            </h3>
+
+            <p>
+              Solutions grounded in real project
+              experience rather than theory alone.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- =========================
+         CONTACT
+    ========================== -->
+
+    <section id="contact">
+
+      <div class="wrap">
+
+        <div class="contact-panel">
+
+          <div class="kicker">
+            Contact
+          </div>
+
+          <h2>
+            Have a project where
+            Aimdriod could help?
+          </h2>
+
+          <p>
+
+            Whether you need specialist programming
+            support, extra capacity for an important
+            delivery, or simply want to discuss a
+            potential project, we'd be happy to
+            hear from you.
+
+          </p>
+
+          <a
+            class="btn btn-primary"
+            href="mailto:aimdriodltd@gmail.com"
+          >
+            aimdriodltd@gmail.com
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer>
+
+    <div class="wrap footer-inner">
+
+      <div>
+
+        <span class="small-accent">
+          Aimdriod
+        </span>
+
+        — Programming. Data. Delivery.
+
+      </div>
+
+      <div>
+
+        &copy;
+        <span id="year"></span>
+        Aimdriod.
+        All rights reserved.
+
+      </div>
+
+    </div>
+
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+
+</body>
+</html>

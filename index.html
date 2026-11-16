@@ -691,6 +691,50 @@
         width: 100%;
       }
     }
+
+    /* CRTwise additions: existing homepage styles are retained above. */
+    a:focus-visible { outline: 3px solid var(--yellow); outline-offset: 5px; }
+    section[id] { scroll-margin-top: 90px; }
+    .nav-links a.product-link { color: var(--green); font-weight: 800; }
+    .product-teaser { padding: 0 0 58px; border-top: 0; }
+    .product-strip { display: flex; align-items: center; justify-content: space-between; gap: 30px; padding: 30px 34px; border: 1px solid rgba(139,229,42,.25); border-radius: var(--radius); background: linear-gradient(110deg,rgba(139,229,42,.07),rgba(255,217,26,.035)); }
+    .product-strip h2 { font-size: 1.8rem; margin: 6px 0 10px; }
+    .product-strip p { color: #c3c3be; margin: 0; }
+    .product-strip .btn { flex-shrink: 0; }
+    .product-hero { min-height: auto; padding: 90px 0 80px; }
+    .product-hero h1 { font-size: clamp(3.5rem,7vw,6rem); }
+    .product-identity { padding: 42px; border: 1px solid var(--line); border-radius: var(--radius); background: linear-gradient(145deg,rgba(139,229,42,.08),rgba(255,217,26,.04)); }
+    .product-identity .wordmark { display: block; font-weight: 850; font-size: clamp(2.4rem,4vw,3.5rem); letter-spacing: -.055em; margin: 18px 0; }
+    .product-identity p { color: #c3c3be; }
+    .product-identity img { width: 180px; max-width: 100%; height: auto; }
+    .draft-note { color: #c3c3be; border-left: 3px solid var(--yellow); padding: 14px 20px; margin-top: 30px; background: rgba(255,217,26,.035); }
+    .draft-note strong { color: var(--text); }
+    @media (max-width: 900px) {
+      .nav-links a.product-link { display: inline-flex; }
+      .nav-links { gap: 16px; }
+      .product-strip { align-items: flex-start; flex-direction: column; }
+      .product-hero { padding: 58px 0; }
+    }
+    @media (max-width: 560px) {
+      .nav-inner { gap: 12px; }
+      .nav-links { gap: 10px; font-size: .82rem; }
+      .nav-cta { padding: 9px 12px; }
+      .product-strip, .product-identity { padding: 26px; }
+      .product-strip .btn { width: 100%; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .btn, .nav-links a { transition: none; }
+      .btn:hover { transform: none; }
+    }
+
+    .teaser-product { display: flex; align-items: flex-start; gap: 22px; min-width: 0; }
+    .teaser-logo { flex: 0 0 76px; width: 76px; height: 76px; border-radius: 16px; }
+    .product-strip .teaser-details { font-size: .88rem; color: var(--muted); margin-top: 12px; }
+    @media (max-width: 560px) {
+      .teaser-product { flex-direction: column; gap: 18px; }
+      .teaser-logo { flex-basis: auto; width: 64px; height: 64px; }
+    }
   </style>
 </head>
 
@@ -716,6 +760,8 @@
         <a href="#services">
           Services
         </a>
+
+        <a class="product-link" href="crtwise.html">CRTwise</a>
 
         <a href="#about">
           About
@@ -805,6 +851,25 @@
       </div>
 
     </header>
+
+    <aside class="product-teaser" aria-labelledby="crtwise-teaser-title">
+      <div class="wrap">
+        <div class="product-strip">
+          <div class="teaser-product">
+            <img class="teaser-logo" src="CRTwise_icon.jpeg" alt="CRTwise logo" width="76" height="76" loading="lazy">
+            <div>
+              <div class="kicker">CRTwise by Aimdriod Ltd.</div>
+              <h2 id="crtwise-teaser-title">Smarter Clinical <span class="gradient-text">Submission Package Reviews</span></h2>
+              <p>Specialist software designed to improve the efficiency, consistency and quality of clinical trial submission-package reviews.</p>
+              <p class="teaser-details">103 deterministic Core checks. Optional AI semantic checks. Reviewer-controlled decisions.</p>
+            </div>
+          </div>
+          <a class="btn btn-primary" href="crtwise.html">Explore CRTwise <span aria-hidden="true">&nbsp;→</span></a>
+        </div>
+      </div>
+    </aside>
+
+
 
     <!-- =========================
          SERVICES
